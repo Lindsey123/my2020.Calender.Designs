@@ -1,0 +1,385 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #ffff;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    perspective: 1000px;
+}
+
+.main {
+    position: absolute;
+    width: 730px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    transition: all 0.195s ease;
+    transform-style: preserve-3d;
+}
+
+.main.is-rotated-left {
+    transform: translate(-50%, -50%) rotateY(-4deg);
+}
+
+.main.is-rotated-right {
+    transform: translate(-50%, -50%) rotateY(4deg);
+}
+
+.main .sideb,
+.main .right-wrapper {
+    background-color: #f05855;
+    width: 50%;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main .header {
+    padding: 15px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main .header i {
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.main .header span {
+    display: inline-block;
+    margin: 0 3px;
+    font-weight: 700;
+}
+
+.main .right-wrapper {
+    background-image: url(https://i.ytimg.com/vi/riViFtOvxIM/maxresdefault.jpg);
+    color: white;
+    transform-origin: left center;
+    transform: rotateY(110deg);
+    transition: all 0.5s;
+}
+
+.main .right-wrapper.is-active {
+    transform: rotateY(0deg);
+}
+
+.main .right-wrapper .header {
+    text-align: left;
+    justify-content: center;
+}
+
+.main .right-wrapper .day {
+    font-size: 12em;
+    text-indent: -12px;
+    display: block;
+}
+
+.main .right-wrapper .month {
+    font-size: 2.5em;
+}
+
+.main .sideb .showDate {
+    color: white;
+    text-align: right;
+    width: 100%;
+}
+
+.main .sideb .showDate i {
+    cursor: pointer;
+    background: #f05855;
+    border-radius: 4px;
+    padding: 8px 12px;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+.main .sideb .showDate i.is-active {
+    transform: scale(-1);
+}
+
+.main .sideb table {
+    text-align: center;
+    width: 90%;
+    margin: 30px auto 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.main .sideb table tbody:before {
+    content: "-";
+    display: block;
+    line-height: 0.75em;
+    color: transparent;
+}
+
+.main .sideb table th {
+    color: #f05855;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.main .sideb table td {
+    padding: 11px 5px;
+    color: #ced0ce;
+    font-size: 0.75em;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.main .sideb table td::before {
+    content: "";
+    display: none;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -8px);
+    background-image: url(https://i.ytimg.com/vi/riViFtOvxIM/maxresdefault.jpg);
+}
+
+.main .sideb table td.currentDay::before {
+    display: block;
+}
+
+.main .sideb table td.selectable {
+    color: #303633;
+    cursor: pointer;
+}
+
+.main .sideb table td.selectable:hover {
+    background: #f05855;
+    color: white;
+}
+
+.main .sideb table td.between {
+    background-color: #333;
+    color: white;
+}
+
+.main .sideb table td.active,
+.main .sideb table td.hover {
+    background: #f05855;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    padding: 40px 120px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    padding: 40px 120px;
+}
+
+.nav-logo img {
+    width: 50px;
+}
+
+.nav-links {
+    flex: 1;
+}
+
+.nav-links ul {
+    margin-left: 50px;
+    display: inline;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 25px;
+}
+
+.nav-links ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: yellow;
+    display: block;
+    margin: auto;
+    transition: 1s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 0;
+    background: yellowgreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links .btn {
+    float: right;
+}
+
+.banner-title {
+    margin: 80px 130px;
+    color: #fff;
+}
+
+.banner-title h1 {
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+
+.banner-title h1 span {
+    color: yellowgreen;
+}
+
+.vertical-bar {
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.search-icon {
+    height: 60%;
+    width: 80px;
+}
+
+.search-icon .fa {
+    margin: 45px 23px;
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.social-icons {
+    height: 35%;
+    width: 80px;
+    background: yellow;
+    text-align: center;
+    padding-top: 27%;
+    bottom: 0;
+    position: absolute;
+}
+
+.social-icons .fa {
+    margin: 15px 23px;
+    display: block;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.notifications {
+    display: flex;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: yellowgreen;
+    align-items: center;
+}
+
+.contents {
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+.notification-img {
+    flex-basis: 50px;
+}
+
+.notification-img img {
+    width: 100%;
+}
+
+.contents a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    margin: 0 10px;
+}
+
+.contents p {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.nav-bar .fa {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .vertical-bar {
+        display: none;
+    }
+    .banner-title {
+        margin: 80px 40px;
+    }
+    .banner-title h1 {
+        font-size: 50px;
+    }
+    .notifications {
+        width: 100%;
+    }
+    .nav-bar {
+        padding: 10px 30px;
+    }
+    .fa-bars {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    .nav-bar .fa {
+        display: block;
+        color: #fff;
+        margin: 10px 25px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links {
+        height: 100vh;
+        width: 200px;
+        background: #000;
+        top: 0;
+        right: -200px;
+        position: absolute;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+    }
+    .nav-links ul a {
+        display: block;
+    }
+    .nav-links .btn {
+        float: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+}
